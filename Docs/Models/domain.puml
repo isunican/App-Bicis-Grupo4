@@ -1,0 +1,30 @@
+@startuml
+
+hide empty members
+
+class Network {
+    - id : String
+    - name : String
+    - href : String
+    - company : String[]
+    - gbfsHref : String
+    - ebikes : boolean
+}
+
+class Location {
+    - city : String
+}
+
+class NetworksResponse {
+
+}
+
+class NetworkResponse {
+    
+}
+
+Network *--> "1" Location : location
+NetworksResponse *--> "*" Network : networks
+NetworkResponse *--> "1" Network : network
+
+@enduml
